@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+        button{
+        display: grid;
+        margin: 10% 45%;
+        box-shadow: 3px 5px 5px 1px #333;
+        padding: 15px 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2 id="demo">Displays Password</h2>
+    <button >
+   Generate Password
+    </button>
+    <script>
+       
+
+
+/*password generator*/
+let len = prompt("Enter length of password");
+function generator(){
+    let chances = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyx0123456789@!#$%^&*";
+    let txt= "";
+    for(let i = 0; i<len; i++){
+        txt += chances.charAt(Math.floor(Math.random()*chances.length))
+    }
+    return document.getElementById('demo').innerHTML = ` Possible Outcome: ${txt}`;
+}
+document.querySelector('button').addEventListener("click", generator);
+
+
+    </script>
+</body>
+</html>
